@@ -1,10 +1,7 @@
 package com.restexample.resthalan.student;
-
-import org.springframework.web.bind.annotation.RestController;
-
 import java.time.LocalDate;
 
-@RestController
+
 public class student {
 
     private long id;
@@ -26,6 +23,7 @@ public class student {
         this.email = email;
         this.name = name;
     }
+
 
     public student(
             long id,
