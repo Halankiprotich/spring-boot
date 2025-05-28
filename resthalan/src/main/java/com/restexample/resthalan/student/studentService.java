@@ -1,22 +1,20 @@
 package com.restexample.resthalan.student;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Component
+
+@Service
 public class studentService {
+    private final studentRepository studentRepository;
+
+    public studentService(studentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public List<student> getstudents(){
-        return List.of(
-                new student(
-                        1L,
-                        "halan",
-                        "kiprotichhalan@gmail.com",
-                        LocalDate.of(2002,12,19),
-                        22
+        return studentRepository.findAll();
 
-                )
-        );
     }
 }
